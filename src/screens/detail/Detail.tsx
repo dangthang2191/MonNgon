@@ -6,6 +6,7 @@ import { useRoute } from '@react-navigation/native'
 import { PropsRouteDetail } from '../../navigations/TypeCheck'
 import { useGetDetailMealQuery } from '../../api/FoodAPI'
 import { IMAGES } from '../../constant/constant'
+import Toast from 'react-native-toast-message'
 
 export default function DetailScreen() {
     const route = useRoute<PropsRouteDetail>()
@@ -14,8 +15,13 @@ export default function DetailScreen() {
     const meal = data?.meals[0]
     return (
         <SafeAreaView>
-            <Header url={meal?.strMealThumb ?? ""}/>
+            <Header 
+                id={meal?.idMeal ?? ""} 
+                title={meal?.strArea ?? ""} 
+                url={meal?.strMealThumb ?? "https://cleverads.vn/blog/wp-content/uploads/2023/10/thi-truong-healthy-food-1.jpg"}
+            />
             <Footer meal={meal}/>
+            <Toast />
         </SafeAreaView>
     )
 }

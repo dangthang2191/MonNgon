@@ -60,3 +60,6 @@ export const FONTSIZE = {
     fontWeightSmall: '400'
 }
 
+export const STORAGEKEY = {
+    bookmark : "BOOKMARK"
+}

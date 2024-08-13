@@ -41,3 +41,9 @@ export type ResponseMeal = {
 export type ResponseCategory = {
     categories: Category[]
 }
+
+export type BookMarkType = {
+    title: string,
+    url: string,
+    id: string
+}
