@@ -9,8 +9,8 @@ import { SCREENS } from "../../../constant/constant";
 export const Trending = () => {
     const {data, isLoading} = useGetTrendingMealQuery();
     const navigation = useNavigation<PropsPush>();
-    const onSendToDetailPage = () => {
-        navigation.push(SCREENS.DETAIL)
+    const onSendToDetailPage = (id: string) => {
+        navigation.push(SCREENS.DETAIL,{id})
     }
     return (
         <View style={style.ctnTrending}>
@@ -18,7 +18,7 @@ export const Trending = () => {
         <FlatList
             horizontal
             data={data?.meals ?? []}
-            renderItem={({item}) => <ItemFood onPress={onSendToDetailPage} url={item.strMealThumb} category={item.strCategory} tab={item.strArea} title={item.strMeal}/>}
+            renderItem={({item}) => <ItemFood id={item.idMeal} onPress={onSendToDetailPage} url={item.strMealThumb} category={item.strCategory} tab={item.strArea} title={item.strMeal}/>}
         />
     </View>
     )

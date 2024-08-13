@@ -5,6 +5,7 @@ import { BlurView } from '@react-native-community/blur'
 import { style } from './Style'
 
 type Props = {
+    id: string,
     url: string,
     category: string,
     title: string,
@@ -17,7 +18,7 @@ export default function ItemFood(props : Props) {
         <TouchableOpacity 
             onPress={() => {
                 if(props.onPress != null){
-                    props.onPress()
+                    props.onPress(props.id)
                 }
             }}
             style={style.item}>

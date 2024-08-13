@@ -11,8 +11,11 @@ export const FoodAPI = createApi({
         }),
         getCategory: buider.query<ResponseCategory, void>({
             query: () => 'categories.php'
+        }),
+        getDetailMeal: buider.query<ResponseMeal, string>({
+            query: (id) => `lookup.php?i=${id}`
         })        
     })
 })
 
-export const {useGetTrendingMealQuery, useGetCategoryQuery} = FoodAPI
+export const {useGetTrendingMealQuery, useGetCategoryQuery, useGetDetailMealQuery} = FoodAPI

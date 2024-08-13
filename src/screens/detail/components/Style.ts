@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import { COLORS, SIZES } from "../../../constant/constant"
+import { COLORS, FONTSIZE, SIZES } from "../../../constant/constant"
 
 export const style = StyleSheet.create({
     headerFood: {
@@ -54,5 +54,42 @@ export const style = StyleSheet.create({
         tintColor: COLORS.primary,
         marginRight: SIZES.marginSmall
 
-    }
+    },
+    fContainer: {
+        padding: SIZES.paddingSmall,
+    },
+    userWrapper: {
+        flexDirection: 'row',
+        borderRadius: 10,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: SIZES.marginSmall
+    },
+    fTitleText: {
+        flex: 1,
+        fontWeight: '500',
+        fontSize: FONTSIZE.fontMedium,
+    },
+    avatarLeft: {
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        marginLeft: -20
+    },
+    subTitle: {
+        color: COLORS.grayDark,
+        alignSelf: 'flex-end'
+    },
+    textAlignRight: {
+        textAlign: 'right'
+    },
+    bIngredientsText: {
+        fontWeight: '700',
+        marginTop: SIZES.marginSmall
+    },
+    bIngredientsItem: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: SIZES.marginSmall
+    },
 })

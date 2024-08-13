@@ -6,9 +6,11 @@ import { RouteProp } from "@react-navigation/native";
 type MainStackParams = {
     HOME : undefined,
     SPLASHSCREEN : undefined
-    DETAIL: undefined
+    DETAIL: {
+        id: string
+    }
 
 }
 
 export type PropsPush = NativeStackNavigationProp<MainStackParams,SCREENS.HOME>
-export type PropsRoute = RouteProp<MainStackParams, SCREENS.HOME>
+export type PropsRouteDetail = RouteProp<MainStackParams, SCREENS.DETAIL>
